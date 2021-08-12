@@ -17,7 +17,7 @@ create table if not exists album (
 create table if not exists track (
 	id_track SERIAL primary KEY,
 	track_name VARCHAR(60) not null,
-	track_time integer not null,
+	track_time integer not null, 
 	id_album integer references album (id_album) not null
 );
 
@@ -44,3 +44,4 @@ create table if not exists tracks_of_collection (
 	id_collection integer references collection_of_music (id_collection) not null,
 	constraint pk_3 primary key (id_track, id_collection)
 );
+
